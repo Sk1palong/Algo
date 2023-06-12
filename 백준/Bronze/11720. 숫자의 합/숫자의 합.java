@@ -6,10 +6,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         String s = sc.next();
-        int[] arr = new int[N];
+        int sum = 0;
         for (int i = 0; i < N; i++) {
-           arr[i] = Integer.parseInt(s.substring(i,i+1));
+            sum += s.charAt(i) - '0';
         }
-        System.out.println(Arrays.stream(arr).sum());
+        System.out.println(sum);
     }
 }
