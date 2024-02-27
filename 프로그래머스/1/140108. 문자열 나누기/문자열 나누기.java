@@ -1,25 +1,27 @@
 class Solution {
     public int solution(String s) {
         int answer = 0;
-        int size = s.length();
-        char front = s.charAt(0);
-        int same = 0;
-        int diff = 0;
-        for(int i = 0 ; i < size ; i++){
-            char ch = s.charAt(i);
-            if(front == ch){
-                same++;
-            }else{
-                diff++;
+        int cntX = 0;
+        int cntNonX= 0;
+        char[] c = s.toCharArray();
+        char x = ' ';   
+        
+        for(int i=0; i<c.length; i++) {
+            if(cntX == 0) {
+                x = c[i];
             }
-            if(same == diff){
+            
+            if(c[i] == x) {
+                cntX++;
+            } else {
+                cntNonX++;
+            }
+            
+            if(cntX == cntNonX) {
                 answer++;
-                same = 0;
-                diff = 0;
-                if(i+1 < size){
-                    front = s.charAt(i+1);
-                }
-            }else if(i == size-1){
+                cntX = 0;
+                cntNonX = 0;
+            } else if (i == c.length -1) {
                 answer++;
             }
         }
