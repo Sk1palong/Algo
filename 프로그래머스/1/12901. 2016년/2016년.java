@@ -1,14 +1,16 @@
 class Solution {
     public String solution(int a, int b) {
         String answer = "";
-        String[] day = {"THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"};
+        String[] day = {"FRI","SAT","SUN","MON","TUE","WED","THU"};
+        int days = b-1;
         int[] month = {31,29,31,30,31,30,31,31,30,31,30,31};
-        int count = 0;
-        for(int i = 0; i <a-1 ; i++){
-            count += month[i];
+        
+        for(int i=0; i<a-1; i++) {
+            days += month[i];
         }
-        count += b;
-        answer = day[count%7];
+        
+        answer += day[days%7];
+        System.out.println(days);
         return answer;
     }
 }
