@@ -7,26 +7,24 @@ class Solution {
         
         for(int n : moves) {
             n--;
-            loop : for(int[] arr : board) {
+            for(int[] arr : board) {
                 if(arr[n] != 0) {
-                    if(!stk.isEmpty() && stk.peek() ==arr[n]) {
+                    if(stk.isEmpty()) {
+                        stk.push(arr[n]);
+                        arr[n] = 0;
+                    } else if(stk.peek() == arr[n]) {
                         stk.pop();
-                        answer += 2;
-                        arr[n] =0;
-                        break loop;
+                        answer+=2;
+                        arr[n] = 0;
                     } else {
                         stk.push(arr[n]);
-                        arr[n] =0;
-                        break loop;
+                        arr[n] = 0;
                     }
+                    break;
                 }
             }
         }
-        for(int[] arr : board) {
-            for(int n : arr) {
-                System.out.print(n);
-            }
-        }
+        
         return answer;
     }
 }
