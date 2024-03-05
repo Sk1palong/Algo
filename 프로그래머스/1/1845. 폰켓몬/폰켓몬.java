@@ -1,18 +1,17 @@
-import java.util.HashSet;
-
+import java.util.*;
 
 class Solution {
     public int solution(int[] nums) {
         int answer = 0;
-        int N = nums.length;
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < N; i++) {
-            
-                set.add(nums[i]);
-                
-            
+        int n = nums.length/2;
+        Set<Integer> set = new HashSet<>();
+        
+        for(int num : nums) {
+            set.add(num);
         }
-        answer = Math.min(N/2,set.size());
+        
+        answer = set.size() >= n ? n : set.size();
+        
         return answer;
     }
 }
