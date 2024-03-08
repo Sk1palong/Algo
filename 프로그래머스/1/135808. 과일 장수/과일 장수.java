@@ -3,12 +3,14 @@ import java.util.*;
 class Solution {
     public int solution(int k, int m, int[] score) {
         int answer = 0;
-        int leng = score.length;
         Arrays.sort(score);
-
-     for(int i = leng-m; i >=0 ; i-=m) {
-         answer += m * score[i];
-     }
+        
+        for(int i=score.length; i>=0; i-=m) {
+            if(i>=m) {
+                answer += score[i-m] * m;
+            }
+        }
+        
         return answer;
     }
 }
