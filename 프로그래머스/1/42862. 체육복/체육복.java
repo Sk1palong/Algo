@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
-        int answer = 0;
+        int answer = n;
         Arrays.sort(lost);
         Arrays.sort(reserve);
         
@@ -24,14 +24,13 @@ class Solution {
                 }
             }
         }
-        System.out.println("lost : " + Arrays.toString(lost));
-        System.out.println("reserve : " + Arrays.toString(reserve));
         
         for(int i=0; i<lost.length; i++) {
             if(lost[i] != -1) {
-                n--;
+                answer--;
             }
         }
-        return n;
+        
+        return answer;
     }
 }
