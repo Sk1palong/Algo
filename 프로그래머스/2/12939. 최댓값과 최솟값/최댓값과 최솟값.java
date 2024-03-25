@@ -3,16 +3,16 @@ import java.util.*;
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String[] arr = s.split(" ");
-        int[] intArr = new int[arr.length];
+        String[] sArr = s.split(" ");
+        int[] arr = new int[sArr.length];
         
-        for(int i =0; i<arr.length; i++){
-            intArr[i] = Integer.parseInt(arr[i]);
+        for(int i=0; i<sArr.length; i++) {
+            int temp = Integer.parseInt(sArr[i]);
+            arr[i] = temp;
         }
-
-        Arrays.sort(intArr);
+        Arrays.sort(arr);
         
-        answer = intArr[0] + " " + intArr[intArr.length-1];
+        answer = arr[0] + " " + arr[arr.length-1];
         
         return answer;
     }
