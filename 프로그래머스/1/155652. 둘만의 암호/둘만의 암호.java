@@ -1,22 +1,31 @@
+import java.util.*;
+
 class Solution {
     public String solution(String s, String skip, int index) {
         String answer = "";
-        char[] c = s.toCharArray();
         
-        for(int i=0; i< c.length; i++) {
-                for(int j=0; j<index; j++) {
-                    c[i]++;
-                    if(c[i]>'z'){
-                        c[i]-=26;
-                    }
-                    if(skip.contains(c[i]+"")) {
-                        j--;
+        for(int i=0; i<s.length(); i++) {
+            char c = s.charAt(i);
+            for(int j=0; j<index; j++) {
+                c++;
+                if('z' < c) {
+                    c -= 26;
+                } 
+                while(skip.contains(c+"")) {
+                    c++;
+                    if('z' < c) {
+                        c -= 26;
                     }
                 }
-
-            answer += c[i];
+            }
+            
+            
+            
+            answer += c;
         }
-
+        
+        
+        
         return answer;
     }
 }
