@@ -1,19 +1,21 @@
 class Solution {
     public int[] solution(int n, int m) {
-        int[] answer = new int[2];
-        
-        answer[0] = n > m ? gcd(n, m) : gcd(m, n);
-        answer[1] = n * m / answer[0];
+        int max = Math.max(n, m);
+        int min = Math.min(n, m);
+        int[] answer = {gcd(max, min), lcm(max, min)};
         
         return answer;
     }
     
-    public int gcd(int a, int b){
-        while(b > 0){
-            int tmp = a;
-            a = b;
-            b = tmp % b;
+    public int gcd(int a, int b) {
+        if(b == 0) {
+            return a;
         }
-        return a;
+        return gcd(b, a%b);
+    }
+    
+    public int lcm(int a, int b) {
+        int gcd = gcd(a, b);
+        return a * b / gcd;
     }
 }
