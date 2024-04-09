@@ -13,6 +13,7 @@ class Solution {
         while(true) {
             int cntA = 0;
             String tmp = Integer.toBinaryString(answer);
+            
             for(int i=0; i<tmp.length(); i++) {
                 if(tmp.charAt(i) == '1') {
                     cntA++;
