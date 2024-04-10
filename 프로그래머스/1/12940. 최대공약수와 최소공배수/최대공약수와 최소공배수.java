@@ -1,9 +1,8 @@
 class Solution {
     public int[] solution(int n, int m) {
-        int max = Math.max(n, m);
-        int min = Math.min(n, m);
-        int[] answer = {gcd(max, min), lcm(max, min)};
-        
+        int a = Math.max(n, m);
+        int b = Math.min(n, m);
+        int[] answer = {gcd(a, b), lcm(a, b)};
         return answer;
     }
     
@@ -15,7 +14,6 @@ class Solution {
     }
     
     public int lcm(int a, int b) {
-        int gcd = gcd(a, b);
-        return a * b / gcd;
+        return a * b / gcd(a, b);
     }
 }
