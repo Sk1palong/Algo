@@ -2,10 +2,10 @@ class Solution {
     public int solution(int n) {
         int answer = n+1;
         int cnt = 0;
-        String biN = Integer.toBinaryString(n);
+        String binary = Integer.toBinaryString(n);
         
-        for(int i=0; i<biN.length(); i++) {
-            if(biN.charAt(i) == '1') {
+        for(int i=0; i<binary.length(); i++) {
+            if(binary.charAt(i) == '1') {
                 cnt++;
             }
         }
