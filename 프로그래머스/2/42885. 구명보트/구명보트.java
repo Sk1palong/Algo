@@ -4,13 +4,23 @@ class Solution {
     public int solution(int[] people, int limit) {
         int answer = 0;
         Arrays.sort(people);
-        int min =0;
+        int max = people.length - 1;
         
-        for(int max=people.length-1; max>=min; max--) {
-            if(people[max] + people[min] <= limit) {
-                min++;
+        for(int min=0; min<people.length; min++) {
+            if(min < max) {
+                if(limit < people[min] + people[max]) {
+                    answer++;
+                    max--;
+                    min--;
+                }
+                else {
+                    answer++;
+                    max--;
+                }
             }
-            answer++;
+            else if(min == max) {
+                answer++;
+            }
         }
         
         return answer;
