@@ -7,21 +7,19 @@ class Solution {
         List<String> binLi2 = new ArrayList<>();
         
         for(int i=0; i<n; i++) {
-            String bin1 = Integer.toBinaryString(arr1[i]);
-            String bin2 = Integer.toBinaryString(arr2[i]);
-            while(bin1.length() != n) {
-                bin1 = 0 + bin1;
+            String binary1 = Integer.toBinaryString(arr1[i]);
+            String binary2 = Integer.toBinaryString(arr2[i]);
+            while(binary1.length() != n) {
+                binary1 = 0 + binary1;
             }
-            while(bin2.length() != n) {
-                bin2 = 0 + bin2;
+            while(binary2.length() != n) {
+                binary2 = 0 + binary2;
             }
-            binLi1.add(bin1);
-            binLi2.add(bin2);
+            binLi1.add(binary1);
+            binLi2.add(binary2);
             
         }
         
-        System.out.println(binLi1); 
-        System.out.println(binLi2);
         
         for(int i=0; i<n; i++) {
             String s = "";
