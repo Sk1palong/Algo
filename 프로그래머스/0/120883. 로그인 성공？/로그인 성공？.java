@@ -4,12 +4,10 @@ class Solution {
         for(int i = 0; i<db.length; i++){
             if(id_pw[0].equals(db[i][0])){
                 if(id_pw[1].equals(db[i][1])){
-                    answer = "login";
-                    break;
+                    return "login";
                 }
                 else{
-                    answer = "wrong pw";
-                    break;
+                    return "wrong pw";
                 }
             }
             else{
