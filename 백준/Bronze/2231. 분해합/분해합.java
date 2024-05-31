@@ -10,7 +10,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 1; i < 1000000; i++) {
+        for (int i = 1; i <= n; i++) {
             int tmp = i;
             int tmp2 = i;
             while (tmp2 > 0) {
