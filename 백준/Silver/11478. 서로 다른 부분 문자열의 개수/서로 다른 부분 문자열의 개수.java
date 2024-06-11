@@ -16,17 +16,13 @@ public class Main {
         String s = br.readLine();
         int leng = s.length();
         Set<String> set = new HashSet<>();
-        int size = 1;
-        
-        while (size <= leng) {
-            for (int start = 0; start <= leng - size; start++) {
-                if (leng >= start + size) {
-                    set.add(s.substring(start, start + size));
-                }
+
+        for (int i = 0; i < leng; i++) {
+            for (int j = i + 1; j <= leng; j++) {
+                set.add(s.substring(i, j));
             }
-            size++;
         }
-        
+
         System.out.println(set.size());
     }
 }
