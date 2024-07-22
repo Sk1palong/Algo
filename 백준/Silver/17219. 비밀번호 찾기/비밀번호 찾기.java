@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
-        StringBuilder sb = new StringBuilder();
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         st = new StringTokenizer(br.readLine(), " ");
@@ -22,14 +21,11 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
-            String address = st.nextToken();
-            String pw = st.nextToken();
-            map.put(address, pw);
+            map.put(st.nextToken(), st.nextToken());
         }
 
         for (int i = 0; i < m; i++) {
-            String target = br.readLine();
-            bw.write(map.get(target) + "\n");
+            bw.write(map.get(br.readLine()) + "\n");
         }
 
         bw.flush();
