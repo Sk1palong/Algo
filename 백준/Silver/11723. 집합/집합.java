@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -14,6 +16,11 @@ public class Main {
 
         int n = Integer.parseInt(br.readLine());
         Set<Integer> set = new HashSet<>();
+        List<Integer> li = new ArrayList<>();
+
+        for (int i = 0; i < 20; i++) {
+            li.add(i + 1);
+        }
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
@@ -45,10 +52,7 @@ public class Main {
                     }
                     break;
                 case "all":
-                    set = new HashSet<>();
-                    for (int j = 1; j <= 20; j++) {
-                        set.add(j);
-                    }
+                    set = new HashSet<>(li);
                     break;
                 case "empty":
                     set.clear();
